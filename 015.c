@@ -4,7 +4,7 @@
 
 #define SIZE 20
 
-int main(void){
+int main(void) {
     int i;
     unsigned long r=1;
     for(i = 1; i < SIZE; i++)

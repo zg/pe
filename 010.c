@@ -4,9 +4,9 @@
 
 #define K 2000000
 
-int main(void){
+int main(void) {
     unsigned long long int tot = 5, i, flag = 0;
-    for(i = 2; i < K; i++){
+    for(i = 2; i < K; i++) {
         if(i == 1)
             continue;
         if(i < 4)
@@ -32,5 +32,5 @@ int main(void){
             tot += i;
     }
     printf("%llu\n",tot);
-    printf("took %dms\n",clock() / (CLOCKS_PER_SEC / 1000));
+    printf("took %lums\n",clock() / (CLOCKS_PER_SEC / 1000));
 }

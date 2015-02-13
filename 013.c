@@ -106,9 +106,9 @@ static char* a[NUMS] = {
     "53503534226472524250874054075591789781264330331690"
 };
 
-int main(void){
+int main(void) {
     int i,j,ca=0,an[WIDTH];
-    for(j = WIDTH - 1; j >= 0; j--){
+    for(j = WIDTH - 1; j >= 0; j--) {
         for(i = 0; i < NUMS; i++)
             ca += a[i][j] - '0';
         an[j] = ca % 10;

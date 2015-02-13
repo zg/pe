@@ -3,16 +3,16 @@
 
 #define BIG_NUM 600851475143
 
-int main(void){
+int main(void) {
     long long int lpf = 2;
     long long int num = BIG_NUM;
-    while(lpf < num){
-        if(num % lpf == 0){
+    while(lpf < num) {
+        if(num % lpf == 0) {
             num = num / lpf;
             lpf = 2;
         } else {
             lpf++;
         }
     }
-    printf("%d\n",lpf);
+    printf("%llu\n",lpf);
 }

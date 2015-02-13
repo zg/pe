@@ -28,62 +28,62 @@ static int a[ROWS*ROWS] = {
     1,70,54,71,83,51,54,69,16,92,33,48,61,43,52,1,89,19,67,48
 };
 
-int main(void){
-    int i,row,col,la[4],l=0,tot;
-    for(i = 0; i < ROWS*ROWS; i++){
+int main(void) {
+    int i,row,col,l=0,tot;
+    for(i = 0; i < ROWS*ROWS; i++) {
         row = (int)ceil(((double)(i+1)/ROWS)) - 1;
         col = i % ROWS;
         tot = a[i];
-        if(0 <= row && row <= ROWS - 4){
+        if(0 <= row && row <= ROWS - 4) {
             tot *= a[i + ROWS] * a[i + 2 * ROWS] * a[i + 3 * ROWS];
-            if(l < tot){
+            if(l < tot) {
                 if(DEBUG)
-                    printf("down %d @ (%d,%d): %lu\n",a[i],col,row,tot);
+                    printf("down %d @ (%d,%d): %d\n",a[i],col,row,tot);
                 l = tot;
             }
         }
         tot = a[i];
-        if(0 <= col && col <= ROWS - 4){
+        if(0 <= col && col <= ROWS - 4) {
             tot *= a[i + 1] * a[i + 2] * a[i + 3];
-            if(l < tot){
+            if(l < tot) {
                 if(DEBUG)
-                    printf("across %d @ (%d,%d): %lu\n",a[i],col,row,tot);
+                    printf("across %d @ (%d,%d): %d\n",a[i],col,row,tot);
                 l = tot;
             }
         }
         tot = a[i];
-        if(0 <= col && col <= ROWS - 4 && 0 <= row && row <= ROWS - 4){
+        if(0 <= col && col <= ROWS - 4 && 0 <= row && row <= ROWS - 4) {
             tot *= a[i + ROWS + 1] * a[i + 2 * ROWS + 2] * a[i + 3 * ROWS + 3];
-            if(l < tot){
+            if(l < tot) {
                 if(DEBUG)
-                    printf("diagonal dltr %d @ (%d,%d): %lu\n",a[i],col,row,tot);
+                    printf("diagonal dltr %d @ (%d,%d): %d\n",a[i],col,row,tot);
                 l = tot;
             }
         }
         tot = a[i];
-        if(2 < col && col < ROWS && 0 <= row && row <= ROWS - 4){
+        if(2 < col && col < ROWS && 0 <= row && row <= ROWS - 4) {
             tot *= a[i + ROWS - 1] * a[i + 2 * ROWS - 2] * a[i + 3 * ROWS - 3];
-            if(l < tot){
+            if(l < tot) {
                 if(DEBUG)
-                    printf("diagonal drtl %d @ (%d,%d): %lu\n",a[i],col,row,tot);
+                    printf("diagonal drtl %d @ (%d,%d): %d\n",a[i],col,row,tot);
                 l = tot;
             }
         }
         tot = a[i];
-        if(0 <= col && col < ROWS - 4 && 2 < row && row < ROWS){
+        if(0 <= col && col < ROWS - 4 && 2 < row && row < ROWS) {
             tot *= a[i - ROWS + 1] * a[i - 2 * ROWS + 2] * a[i - 3 * ROWS + 3];
-            if(l < tot){
+            if(l < tot) {
                 if(DEBUG)
-                    printf("diagonal ultr %d @ (%d,%d): %lu\n",a[i],col,row,tot);
+                    printf("diagonal ultr %d @ (%d,%d): %d\n",a[i],col,row,tot);
                 l = tot;
             }
         }
         tot = a[i];
-        if(3 <= col && col < ROWS && 2 < row && row < ROWS){
+        if(3 <= col && col < ROWS && 2 < row && row < ROWS) {
             tot *= a[i - ROWS - 1] * a[i - 2 * ROWS - 2] * a[i - 3 * ROWS - 3];
-            if(l < tot){
+            if(l < tot) {
                 if(DEBUG)
-                    printf("diagonal urtl %d @ (%d,%d): %lu\n",a[i],col,row,tot);
+                    printf("diagonal urtl %d @ (%d,%d): %d\n",a[i],col,row,tot);
                 l = tot;
             }
         }
